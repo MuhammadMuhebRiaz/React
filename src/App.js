@@ -5,7 +5,12 @@ let name = 'Muheb Riaz';
 
 function App() {
   return (
-    <Navbar/>
+    <Navbar title="ReactApp" 
+                  home="Home"
+                  about="About" 
+                  services="Services" 
+                  contact="Contact"
+                  />
   );
 }
 
