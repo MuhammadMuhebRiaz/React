@@ -15,6 +15,14 @@ export default function TextForm(props) {
     setText(event.target.value);
     console.log("on change:", event.target.value);
   };
+  const handleUpCopy = () => {
+    navigator.clipboard.writeText(Text);
+    console.log("Text Copied:", Text);
+  }
+  const handleUpClear = () => {
+    setText('');
+    console.log("Text Cleared");
+  }
 
   const wordCount = Text.trim().length === 0 ? 0 : Text.trim().split(/\s+/).length; // Count words
 
@@ -31,10 +39,11 @@ export default function TextForm(props) {
             rows="8"
             placeholder="Enter your text here"
           ></textarea>
-          <button type="button" className="btn btn-primary my-2" onClick={handleUpClick}>
-            Convert To Uppercase
-          </button>
-        </div>
+          <button type="button" className="btn btn-primary my-2" onClick={handleUpClick}>Convert To Uppercase</button>
+          <button type="button" className="btn btn-primary my-2 mx-2" onClick={handleUpCopy}>Copy Text</button>
+          <button type="button" className="btn btn-primary my-2 mx-2" onClick={handleUpClear}>Clear Text</button>        
+
+          </div>
       </div>
       <div className="container my-4">
         <h2>Your Text Summary</h2>
@@ -43,6 +52,7 @@ export default function TextForm(props) {
        <p>{}</p>
         <h2>Preview</h2>
         <p>{Text.length > 0 ? Text : "Enter something in the textbox above to preview it here"}</p>
+        
       </div>
     </>
   );
