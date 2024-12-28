@@ -1,9 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar';
-import TextForm from './components/TextForm';
+import About from './components/About';
+// import TextForm from './components/TextForm';
 let name = 'Muheb Riaz';
-
 function App() {
   return (
     <>
@@ -12,8 +12,9 @@ function App() {
                   about="About" 
                   services="Services" 
                   contact="Contact"/>
-      <TextForm heading="Enter The Text To Analyze"/>
-    </>
+      {/* <TextForm heading="Enter The Text To Analyze"/> */}
+      <About/>
+      </>
   );
 }
 
